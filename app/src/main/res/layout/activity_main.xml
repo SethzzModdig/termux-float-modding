@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     android:background="@drawable/floating_window_background"
     android:orientation="vertical"
-    android:padding="1px" >
+    android:padding="1px">
 
-    <!-- Title / Header bar (drag handle) -->
+    <!-- Barra de título para arrastar -->
     <LinearLayout
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
@@ -31,8 +31,8 @@
             android:id="@+id/minimize_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_minimize_icon"
             android:contentDescription="Minimizar"
+            android:background="@drawable/ic_minimize_icon"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp" />
 
@@ -40,8 +40,8 @@
             android:id="@+id/maximize_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_maximize_icon"
             android:contentDescription="Maximizar"
+            android:background="@drawable/ic_maximize_icon"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp" />
 
@@ -49,19 +49,17 @@
             android:id="@+id/exit_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_exit_icon"
             android:contentDescription="Fechar"
+            android:background="@drawable/ic_exit_icon"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp" />
-
     </LinearLayout>
 
-    <!-- Terminal container -->
+    <!-- Container do terminal -->
     <FrameLayout
         android:id="@+id/terminal_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:clipToPadding="true">
 
         <com.termux.view.TerminalView
@@ -72,10 +70,9 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:scrollbars="vertical" />
-
     </FrameLayout>
 
-    <!-- Resize handles (bottom-right corner, right edge, bottom edge) -->
+    <!-- Resize handles -->
     <View
         android:id="@+id/resize_handle_se"
         android:layout_width="24dp"
