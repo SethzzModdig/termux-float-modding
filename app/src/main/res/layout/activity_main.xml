@@ -1,13 +1,15 @@
+
 <?xml version="1.0" encoding="utf-8"?>
-<com.termux.window.TermuxFloatView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.termux.window.TermuxFloatView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/window_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/floating_window_background"
     android:orientation="vertical"
-    android:padding="1px" >
+    android:padding="1dp">
 
-    <!-- Title / Header bar (drag handle) -->
+    <!-- Barra de título para arrastar -->
     <LinearLayout
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
@@ -31,37 +33,36 @@
             android:id="@+id/minimize_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_minimize_icon"
-            android:contentDescription="Minimizar"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp" />
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Minimizar"
+            android:background="@drawable/ic_minimize_icon" />
 
         <Button
             android:id="@+id/maximize_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_maximize_icon"
-            android:contentDescription="Maximizar"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp" />
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Maximizar"
+            android:background="@drawable/ic_maximize_icon" />
 
         <Button
             android:id="@+id/exit_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_exit_icon"
-            android:contentDescription="Fechar"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp" />
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Fechar"
+            android:background="@drawable/ic_exit_icon" />
 
     </LinearLayout>
 
-    <!-- Terminal container -->
+    <!-- Container do terminal -->
     <FrameLayout
         android:id="@+id/terminal_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:clipToPadding="true">
 
         <com.termux.view.TerminalView
@@ -75,16 +76,17 @@
 
     </FrameLayout>
 
-    <!-- Resize handles (bottom-right corner, right edge, bottom edge) -->
+    <!-- Alça de redimensionamento diagonal -->
     <View
         android:id="@+id/resize_handle_se"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_gravity="end|bottom"
         android:background="@drawable/resize_handle_drawable"
-        android:translationZ="10dp"
-        android:padding="4dp" />
+        android:padding="4dp"
+        android:translationZ="10dp" />
 
+    <!-- Alça de redimensionamento horizontal -->
     <View
         android:id="@+id/resize_handle_e"
         android:layout_width="12dp"
@@ -93,6 +95,7 @@
         android:background="@android:color/transparent"
         android:clickable="true" />
 
+    <!-- Alça de redimensionamento vertical -->
     <View
         android:id="@+id/resize_handle_s"
         android:layout_width="match_parent"
