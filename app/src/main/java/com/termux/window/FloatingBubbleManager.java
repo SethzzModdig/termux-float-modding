@@ -76,8 +76,13 @@ public class FloatingBubbleManager {
         termuxFloatView.hideTouchKeyboard();
         termuxFloatView.changeFocus(false);
 
-        ViewGroup windowControls = termuxFloatView.findViewById(R.id.window_controls);
+        // Antes era R.id.window_controls; no XML novo esse elemento se chama title_bar
+        ViewGroup windowControls = termuxFloatView.findViewById(R.id.title_bar);
         windowControls.setVisibility(View.GONE);
+
+        // ===== Código adicionado: esconder as alças de resize na bolha =====
+        setResizeHandlesVisibility(termuxFloatView, View.GONE);
+        // ===== Fim do código adicionado =====
 
         getWindowManager().updateViewLayout(termuxFloatView, layoutParams);
         mIsMinimized = true;
@@ -99,8 +104,13 @@ public class FloatingBubbleManager {
         termuxFloatView.setBackground(mOriginalFloatViewBackground);
         termuxFloatView.setClipToOutline(false);
 
-        ViewGroup windowControls = termuxFloatView.findViewById(R.id.window_controls);
+        // Antes era R.id.window_controls; no XML novo esse elemento se chama title_bar
+        ViewGroup windowControls = termuxFloatView.findViewById(R.id.title_bar);
         windowControls.setVisibility(View.VISIBLE);
+
+        // ===== Código adicionado: mostrar de novo as alças de resize =====
+        setResizeHandlesVisibility(termuxFloatView, View.VISIBLE);
+        // ===== Fim do código adicionado =====
 
         getWindowManager().updateViewLayout(termuxFloatView, layoutParams);
         mIsMinimized = false;
@@ -108,6 +118,17 @@ public class FloatingBubbleManager {
         // clear so we can capture proper values on next minimize
         mDidCaptureOriginalValues = false;
     }
+
+    // ===== Código adicionado: helper pra achar e esconder/mostrar as 3 alças juntas =====
+    private void setResizeHandlesVisibility(TermuxFloatView termuxFloatView, int visibility) {
+        View resizeSE = termuxFloatView.findViewById(R.id.resize_handle_se);
+        View resizeE = termuxFloatView.findViewById(R.id.resize_handle_e);
+        View resizeS = termuxFloatView.findViewById(R.id.resize_handle_s);
+        if (resizeSE != null) resizeSE.setVisibility(visibility);
+        if (resizeE != null) resizeE.setVisibility(visibility);
+        if (resizeS != null) resizeS.setVisibility(visibility);
+    }
+    // ===== Fim do código adicionado =====
 
     public boolean isMinimized() {
         return mIsMinimized;
