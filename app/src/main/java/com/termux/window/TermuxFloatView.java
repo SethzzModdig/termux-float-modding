@@ -78,6 +78,29 @@ public class TermuxFloatView extends LinearLayout {
 
     private static final String LOG_TAG = "TermuxFloatView";
 
+    // ===== Código adicionado: drag e resize manual =====
+    private View titleBar;
+    private View resizeHandleSE;
+    private View resizeHandleE;
+    private View resizeHandleS;
+    private View terminalContainer;
+
+    private boolean isDragging = false;
+    private boolean isResizing = false;
+
+    private int dragStartX;
+    private int dragStartY;
+    private int dragInitialX;
+    private int dragInitialY;
+    private int resizeStartWidth;
+    private int resizeStartHeight;
+    private float resizeStartRawX;
+    private float resizeStartRawY;
+
+    private static final int MIN_WINDOW_WIDTH = 200;
+    private static final int MIN_WINDOW_HEIGHT = 120;
+    // ===== Fim do código adicionado =====
+
     final ScaleGestureDetector mScaleDetector = new ScaleGestureDetector(getContext(), new OnScaleGestureListener() {
         private static final int MIN_SIZE = 50;
 
