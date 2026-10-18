@@ -1,9 +1,22 @@
-# Termux:Float
+# Termux:Float (Mod)
 
 [![Build status](https://github.com/termux/termux-float/workflows/Build/badge.svg)](https://github.com/termux/termux-float/actions)
 [![Join the chat at https://gitter.im/termux/termux](https://badges.gitter.im/termux/termux.svg)](https://gitter.im/termux/termux)
 
-A [Termux] plugin app to show the terminal in a floating terminal window.
+Este é um **fork modificado** do [Termux:Float](https://github.com/termux/termux-float) original, com melhorias na janela flutuante.
+
+### O que foi modificado
+
+A versão original do Termux:Float só permitia mover a janela segurando um toque longo até ela virar uma bolha, e o redimensionamento era feito por gesto de pinça (igual zoom de foto). Este mod adiciona:
+
+- **Barra de título arrastável** — agora dá pra mover a janela só arrastando pela barra do topo, sem precisar virar bolha primeiro.
+- **Alças de redimensionamento nas 4 bordas** (topo, baixo, esquerda e direita) e no canto inferior direito — dá pra redimensionar a janela puxando qualquer borda, de forma mais previsível que o gesto de pinça.
+- Correções internas para o redimensionamento funcionar corretamente junto com o recurso de minimizar/restaurar (bolha flutuante) já existente no app original.
+
+O restante do funcionamento (terminal, sessões, configurações via `termux.float.properties`, etc.) continua igual ao projeto original — veja a documentação completa mais abaixo.
+
+
+Como o projeto original é licenciado sob **GPLv3**, este fork modificado também é distribuído sob a mesma licença — veja [`LICENSE.md`](LICENSE.md).
 ##
 
 
