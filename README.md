@@ -114,6 +114,7 @@ Check [Forking](https://github.com/termux/termux-app#Forking) section of `termux
 
 ## Créditos
 
-Based on termux-float (https://github.com/termux/termux-float), 
+Based on termux-float (https://github.com/termux/termux-float),
+via fork by MichaelPatrickMcGuireJr (https://github.com/MichaelPatrickMcGuireJr/termux-float),
 modified by [SethzzModdig].
 Licensed under GPLv3.
