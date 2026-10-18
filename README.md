@@ -110,3 +110,10 @@ Check [Forking](https://github.com/termux/termux-app#Forking) section of `termux
 
 
 [Termux]: https://termux.dev
+
+
+## Créditos
+
+Based on termux-float (https://github.com/termux/termux-float), 
+modified by [SethzzModdig].
+Licensed under GPLv3.
